@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import React from "react";
-import Widget from "./components/widget/widget";
+import Widget from "./components/Widget/Widget";
 import Extend from "./components/Extend/Extend";
 import { format } from "date-fns";
 import datos5 from "./datos5";
