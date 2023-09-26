@@ -11,8 +11,6 @@ import Sleet from "../../assets/Sleet.png";
 import Snow from "../../assets/Snow.png";
 import ThunderStorm from "../../assets/Thunderstorm.png";
 function Extend({ data, datab, formatDate }) {
-  console.log(datab);
-  console.log(data);
   const weatherImageMap = {
     Clear: Clear,
     Rain: Rain,

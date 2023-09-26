@@ -35,12 +35,16 @@ input{
     border: 0.5px solid rgb(100, 100, 100);
     display: flex;
 }
+.div-click{
+    cursor: pointer;
+}
 .btn-se{
     background-color:#3C47E9;
     width: 86px;
     height: 54px;
     margin-left: 12px;
     border: 0px;
+    cursor: pointer;
 }
 
 .p-city {
@@ -140,6 +144,7 @@ button {
     padding: 10px 13px;
     margin-top: 30px;
     margin-left: 5%;
+    cursor: pointer;
 }
 
 .btn-location {
@@ -148,4 +153,5 @@ button {
     margin-top: 30px;
     border-radius: 21px;
     padding: 6px;
+    cursor: pointer;
 }

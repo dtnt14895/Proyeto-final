@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Widget.css";
 import Clear from "../../assets/Clear.png";
 import Clouds from "../../assets/Clouds.png";
@@ -22,6 +22,7 @@ function Widget({
   searchResults,
   searchInput,
   hide,
+  handleGetLocation
 }) {
   const weatherImageMap = {
     Clear: Clear,
@@ -35,6 +36,7 @@ function Widget({
     Snow: Snow,
     ThunderStorm: ThunderStorm,
   };
+  const [search,setSearch]=useState("search location");
   return (
     <div className={`izquierda`}>
       <div>
@@ -46,7 +48,7 @@ function Widget({
         >
           Search for places
         </button>
-        <button className={`btn-location ${hide == true ? "hide" : ""}`}>
+        <button className={`btn-location ${hide == true ? "hide" : ""}`} onClick={handleGetLocation}>
           <span className="material-symbols-outlined">my_location</span>
         </button>
         {showSearchMenu && (
@@ -54,21 +56,24 @@ function Widget({
             <input
               className="input"
               type="text"
-              placeholder={`search location`}
+              placeholder={search}
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
             <button
               className="btn-se"
               onClick={() => {
-                handleSearch();
+                handleSearch(search);
+                console.log(search);
               }}
             >
               Search
             </button>
             <ul className="ul-city">
               {searchResults.map((result, index) => (
-                <div>
+                <div className="div-click" onClick={()=>{
+                  setSearch(result)
+                }}>
                   <li className="li-city" key={index}>
                     <p className="p-city">{result}</p>
                     <p className="p-">&gt;</p>
