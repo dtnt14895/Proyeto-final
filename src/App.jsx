@@ -125,7 +125,7 @@ function App() {
         setHide={setHide}
         handleGetLocation={handleGetLocation}
       />
-      <Extend data={data} datab={dataB} formatDate={formatDate} />
+      //<Extend data={data} datab={dataB} formatDate={formatDate} />
     </div>
   );
 }
