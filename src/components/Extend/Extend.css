@@ -1,31 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .derecha {
     width: 70%;
     background-color: rgb(12, 12, 51);
 }
-.card{
-    width: 120px;
+p{
+    font-family: Raleway;
+}
+.card-extend-title {
+    margin-left: 125px !important;
+}
+
+.card {
+    width: 130px;
     height: 177px;
     margin-right: 15px;
     margin-left: 15px;
     background-color: rgb(32, 30, 61);
-    display: block;
     justify-content: center;
     align-items: center;
     font-family: Raleway;
 }
-.card p{
+
+.material-symbols-outlined {
+    color: white;
+}
+
+.card p {
     color: rgb(255, 255, 255);
     opacity: 0.8;
     font-size: 17px;
     margin-left: 19px;
     margin-top: 15px;
 }
-.der{
+
+.card-2 p {
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    font-size: 17px;
+    margin-left: 19px;
+    margin-top: 15px;
+}
+
+.card-2 h1 {
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    font-size: 50px
+}
+
+.der {
     margin-left: 7px;
     opacity: 0.4 !important;
 }
-.card-contenedor{
+
+.card-contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,12 +61,141 @@
     padding-left: 0px;
     margin-left: -40%;
 }
-.card-imagen{
+
+.card-imagen {
     width: 55px;
     height: 50px;
     margin-left: 30px;
     margin-bottom: 15px;
 }
-.min-max{
+
+.min-max {
     display: flex;
+}
+.conversor{
+    border-radius: 10px;
+    margin-right: 7px;
+}
+.nav {
+    margin-left: 760px;
+    margin-top: 40px;
+    margin-bottom: -70px;
+
+  }
+.extend-card-1 {
+    display: flex;
+}
+
+.extend-card-2 {
+    display: flex;
+}
+
+.card-extend {
+    background-color: rgb(30, 67, 99);
+    width: 340px;
+    height: 205px;
+    margin-left: 45px;
+    margin-bottom: 45px;
+}
+.tomorrow{
+    margin-left: 65px;
+}
+.card-extend-2 {
+    background-color: rgb(30, 67, 99);
+    width: 340px;
+    height: 165px;
+    margin-left: 45px;
+    margin-bottom: 45px;
+}
+
+.h2-title {
+    opacity: 0.9;
+    font-family: Raleway;
+}
+
+.title-h2 {
+    text-align: left;
+
+}
+
+.humidity {
+    margin-bottom: 0px;
+}
+
+.card-extend-2 h1 {
+    margin-left: 70px;
+}
+
+h3 {
+    font-family: Raleway;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+.card-footer {
+    display: flex;
+    margin-left: 20px;
+}
+
+/* Estilos para la barra medidora */
+.contenedor-medidor {
+    background-color: white;
+    width: 240px;
+    /* Ancho total del contenedor */
+    height: 8px;
+    /* Altura de la barra */
+    border: 0px solid #ccc;
+    /* Borde de la barra */
+    border-radius: 5px;
+    margin-left: 45px;
+    margin-bottom: -17px;
+}
+
+.porcentage {
+    margin-left: 271px !important;
+}
+
+.wsw {
+    padding-top: 0;
+}
+
+.wind {
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin-top: 12px;
+    background-color: #868181;
+    width: 25px;
+    height: 25px;
+    border-radius: 14px;
+    margin-left: 95px;
+}
+
+.barra {
+    height: 100%;
+    background-color: #e1ee2d;
+    /* Color de la barra de medición */
+    transition: width 0.3s;
+    /* Animación de cambio de ancho */
+    border-radius: 5px;
+}
+
+.numbers {
+    display: flex;
+    margin-bottom: -15px;
+    margin-left: 25px;
+}
+
+.numbers p {
+    font-size: 14px;
+    margin-right: 80px;
+    padding: 0;
+}
+.footer{
+    font-family: Raleway;
+    color: white;
+    margin-top:84px ;
+    margin-left: 245px;
+    opacity: 0.4;
 }

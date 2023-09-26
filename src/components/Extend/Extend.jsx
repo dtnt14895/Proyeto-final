@@ -26,12 +26,12 @@ function Extend({ datab, formatDate }) {
   };
   return (
     <div className="derecha">
-      <nav>
-        <button>C</button>
-        <button>F</button>
+      <nav className="nav">
+        <button className="conversor">C</button>
+        <button className="conversor">F</button>
       </nav>
       <div className="card-contenedor">
-        <div className="card">
+        <div className="card tomorrow">
           <p>Tomorrow</p>
           <img
             className="card-imagen"
@@ -94,7 +94,7 @@ function Extend({ datab, formatDate }) {
             src={weatherImageMap[datab && datab.list[32].weather[0].main]}
             alt=""
           />
-                    <div className="min-max">
+          <div className="min-max">
             <p>{`${datab && Math.round(datab.list[32].main.temp_min)}°C`}</p>
             <p className="der">{`${
               datab && Math.round(datab.list[32].main.temp_max)
@@ -102,16 +102,47 @@ function Extend({ datab, formatDate }) {
           </div>
         </div>
       </div>
-      <h2></h2>
-      <div>
-        <div>6</div>
-        <div>7</div>
+      <div className="card-2">
+        <div className="title-h2">
+          <h2 className="h2-title">Today’s Hightlights</h2>
+        </div>
+        <div className="extend-card-1">
+          <div className="card-extend">
+            <p className="card-extend-title">Wind status</p>
+            <h1 className="wind">7mph</h1>
+            <div className="card-footer">
+              <div className="icon">
+                <span class="material-symbols-outlined">near_me</span>
+              </div>
+              <p className="wsw">WSW</p>
+            </div>
+          </div>
+          <div className="card-extend">
+            <p className="card-extend-title">Humidity</p>
+            <h1 className="humidity">84%</h1>
+            <div className="numbers">
+              <p>0</p>
+              <p>50</p>
+              <p>100</p>
+            </div>
+            <div className="contenedor-medidor">
+              <div className="barra" style={{ width: `84%` }}></div>
+            </div>
+            <p className="porcentage">%</p>
+          </div>
+        </div>
+        <div className="extend-card-2">
+          <div className="card-extend-2">
+            <p className="card-extend-title">Visibility</p>
+            <h1>6.4 miles</h1>
+          </div>
+          <div className="card-extend-2">
+            <p className="card-extend-title">Air Pressure</p>
+            <h1>998 mb</h1>
+          </div>
+        </div>
       </div>
-      <div>
-        <div>8</div>
-        <div>9</div>
-      </div>
-      <footer>10</footer>
+      <footer className="footer">created by AbnerCopa - devChallenges.io</footer>
     </div>
   );
 }

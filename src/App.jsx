@@ -5,15 +5,19 @@ import React from "react";
 import Widget from "./components/widget/widget";
 import Extend from "./components/Extend/Extend";
 import { format } from 'date-fns';
+import datos5 from "./datos5";
+import datos from "./datos";
 
 function App() {
-  const [data, setData] = useState(0);
-  const [dataB, setDataB] = useState(0);
+  const [city, setCity] = useState("london");
+  const [data, setData] = useState();
+  const [dataB, setDataB] = useState();
+  const key = "b6fa2e1bfe6cb687ff3a8c6469391ef6"
 useEffect(() => {
   const getData = async () => {
     try {
       const res = await fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=oruro&appid=e90583c0b83a9440a70d6be37974291e&units=metric"
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
       );
       const datos = await res.json();
       setData(datos);
@@ -23,11 +27,12 @@ useEffect(() => {
   };
   getData();
 }, []);
+console.log(data);
 useEffect(() => {
   const getData = async () => {
     try {
       const res = await fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?q=oruro&appid=e90583c0b83a9440a70d6be37974291e&units=metric"
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`
       );
       const datos = await res.json();
       setDataB(datos);
@@ -37,6 +42,8 @@ useEffect(() => {
   };
   getData();
 }, []);
+console.log(data);
+console.log(dataB);
 const currentDate = format(new Date(),'EEE, d MMM');
 const formatDate = (inputDate)=>{
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -51,8 +58,8 @@ const formatDate = (inputDate)=>{
 }
   return (
     <div className="columnas">
-      <Widget data={data} currentDate={currentDate}/>
-      <Extend datab={dataB} formatDate={formatDate}/>
+      <Widget data={datos} currentDate={currentDate}/>
+      <Extend datab={datos5} formatDate={formatDate}/>
     </div>
   );
 }
