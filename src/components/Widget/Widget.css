@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.izquierda {
+    background-color: #1E213A;
+    width: 459px;
+    float: left;
+    font-family: Raleway;
+}
+
+.hide {
+    display: none;
+}
+
+.ul-city {
+    font-family: Raleway;
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input{
+    background-color: transparent;
+    width:50%;
+    height: 50px;
+    margin-left: 39px;
+    border: 0.5px solid rgb(100, 100, 100);
+    margin-top: 58px;
+}
+
+.li-city {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    border: 0.5px solid rgb(100, 100, 100);
+    display: flex;
+}
+.div-click{
+    cursor: pointer;
+}
+.btn-se{
+    background-color:#3C47E9;
+    width: 86px;
+    height: 54px;
+    margin-left: 12px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.p-city {
+    opacity: 1;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.p- {
+    opacity: 1;
+    font-size: 16px;
+    margin-left: 215px;
+
+}
+
+.clouds {
+    position: absolute;
+    opacity: 0.2;
+    margin: 0;
+    left: -10%;
+    margin-top: 60px;
+}
+
+.img-main {
+    margin-left: 20%;
+    margin-top: 115px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9rem;
+    margin-left: 33%;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+}
+
+.temperatura-main {
+    display: flex;
+    align-items: center;
+    margin-bottom: -60px;
+}
+
+.unidad {
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    margin-top: 135px;
+    opacity: 0.3;
+}
+
+.clima {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    opacity: 0.3;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 60px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+    font-size: 20px;
+}
+
+.actual {
+    display: flex;
+    align-items: center;
+}
+
+.today {
+    margin-left: 30%;
+}
+
+.point {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 22px;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+    margin-left: 40%;
+}
+
+button {
+    background-color: #6E707A;
+    color: #ffffff;
+    border: 0px solid;
+}
+
+.btn-search {
+    position: absolute;
+    padding: 10px 13px;
+    margin-top: 30px;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.btn-location {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 30px;
+    border-radius: 21px;
+    padding: 6px;
+    cursor: pointer;
+}
