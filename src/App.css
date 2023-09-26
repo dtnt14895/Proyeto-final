@@ -1,12 +1,11 @@
 body{
   margin: 0;
-  padding: 0; /* Elimina el relleno predeterminado del body */
-  overflow: hidden; /* Evita barras de desplazamiento horizontales y verticales */
-/*   background-color:#100E1D;
-
- */}
+  padding: 0;
+  overflow: hidden; 
+}
 .columnas{
   display: flex;
   flex-direction: row;
   height: 100vh;
+  background-color: #100E1D;
 }

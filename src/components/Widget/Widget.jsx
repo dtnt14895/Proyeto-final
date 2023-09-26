@@ -12,7 +12,17 @@ import Snow from "../../assets/Snow.png";
 import ThunderStorm from "../../assets/Thunderstorm.png";
 import CloudsBack from "../../assets/Cloud-background.png";
 
-function Widget({ data, currentDate }) {
+function Widget({
+  data,
+  currentDate,
+  handleSearchClick,
+  setSearchInput,
+  showSearchMenu,
+  handleSearch,
+  searchResults,
+  searchInput,
+  hide,
+}) {
   const weatherImageMap = {
     Clear: Clear,
     Rain: Rain,
@@ -25,34 +35,74 @@ function Widget({ data, currentDate }) {
     Snow: Snow,
     ThunderStorm: ThunderStorm,
   };
-
   return (
-    <div className="izquierda">
-      <button className="btn-search">Search for places</button>
-      <button className="btn-location">
-        <span className="material-symbols-outlined">my_location</span>
-      </button>
+    <div className={`izquierda`}>
       <div>
-        <img
-          className="img-main"
-          src={weatherImageMap[data && data.weather[0].main]}
-          alt="Estado del clima"
-        />
-        <img className="clouds" src={CloudsBack} alt="back" />
+        <button
+          className={`btn-search ${hide == true ? "hide" : ""}`}
+          onClick={() => {
+            handleSearchClick();
+          }}
+        >
+          Search for places
+        </button>
+        <button className={`btn-location ${hide == true ? "hide" : ""}`}>
+          <span className="material-symbols-outlined">my_location</span>
+        </button>
+        {showSearchMenu && (
+          <div className="search-menu">
+            <input
+              className="input"
+              type="text"
+              placeholder={`search location`}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <button
+              className="btn-se"
+              onClick={() => {
+                handleSearch();
+              }}
+            >
+              Search
+            </button>
+            <ul className="ul-city">
+              {searchResults.map((result, index) => (
+                <div>
+                  <li className="li-city" key={index}>
+                    <p className="p-city">{result}</p>
+                    <p className="p-">&gt;</p>
+                  </li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
-      <div className="temperatura-main">
-        <h1>{Math.round(data && data.main.temp)}</h1>
-        <h4 className="unidad">°C</h4>
+      <div className={`${hide == true ? "hide" : ""}`}>
+        <div>
+          <img
+            className="img-main"
+            src={weatherImageMap[data && data.weather[0].main]}
+            alt="Estado del clima"
+          />
+          <img className="clouds" src={CloudsBack} alt="back" />
+        </div>
+        <div className="temperatura-main">
+          <h1>{Math.round(data && data.main.temp)}</h1>
+          <h4 className="unidad">°C</h4>
+        </div>
+        <h3 className="clima">{data && data.weather[0].main}</h3>
+        <div className="actual">
+          <p className="today">Today</p>
+          <p className="point">.</p>
+          <p>{currentDate}</p>
+        </div>
+        <h2>
+          <span className="material-symbols-outlined">location_on</span>{" "}
+          {data && data.name}
+        </h2>
       </div>
-      <h3 className="clima">{data && data.weather[0].main}</h3>
-      <div className="actual">
-        <p className="today">Today</p>
-        <p className="point">.</p>
-        <p>{currentDate}</p>
-      </div>
-      <h2><span className="material-symbols-outlined">
-location_on
-</span> {data && data.name}</h2>
     </div>
   );
 }

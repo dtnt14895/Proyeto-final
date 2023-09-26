@@ -10,8 +10,9 @@ import Shower from "../../assets/Shower.png";
 import Sleet from "../../assets/Sleet.png";
 import Snow from "../../assets/Snow.png";
 import ThunderStorm from "../../assets/Thunderstorm.png";
-function Extend({ datab, formatDate }) {
+function Extend({ data, datab, formatDate }) {
   console.log(datab);
+  console.log(data);
   const weatherImageMap = {
     Clear: Clear,
     Rain: Rain,
@@ -109,7 +110,7 @@ function Extend({ datab, formatDate }) {
         <div className="extend-card-1">
           <div className="card-extend">
             <p className="card-extend-title">Wind status</p>
-            <h1 className="wind">7mph</h1>
+            <h1 className="wind">{`${data&&Math.round(data.wind.speed)} mph`}</h1>
             <div className="card-footer">
               <div className="icon">
                 <span class="material-symbols-outlined">near_me</span>
@@ -119,14 +120,14 @@ function Extend({ datab, formatDate }) {
           </div>
           <div className="card-extend">
             <p className="card-extend-title">Humidity</p>
-            <h1 className="humidity">84%</h1>
+            <h1 className="humidity">{`${data&&data.main.humidity}%`}</h1>
             <div className="numbers">
               <p>0</p>
               <p>50</p>
               <p>100</p>
             </div>
             <div className="contenedor-medidor">
-              <div className="barra" style={{ width: `84%` }}></div>
+              <div className="barra" style={{ width: `${data&&data.main.humidity}%` }}></div>
             </div>
             <p className="porcentage">%</p>
           </div>
@@ -134,11 +135,11 @@ function Extend({ datab, formatDate }) {
         <div className="extend-card-2">
           <div className="card-extend-2">
             <p className="card-extend-title">Visibility</p>
-            <h1>6.4 miles</h1>
+            <h1>{`${data&&(data.visibility)/1000} miles`}</h1>
           </div>
           <div className="card-extend-2">
             <p className="card-extend-title">Air Pressure</p>
-            <h1>998 mb</h1>
+            <h1>{`${data&&data.main.pressure} mb`}</h1>
           </div>
         </div>
       </div>
