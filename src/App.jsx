@@ -5,7 +5,8 @@ import React from "react";
 import Widget from "./components/Widget/Widget";
 import Extend from "./components/Extend/Extend";
 import { format } from "date-fns";
-
+import datos from "./datos";
+import datos5 from "./datos5";
 function App() {
   const [city, setCity] = useState("lapaz");
   const [data, setData] = useState();
@@ -109,6 +110,12 @@ function App() {
       console.log("La geolocalización no está disponible en este navegador.");
     }
   };
+  if(data == undefined){
+    setData(datos)
+  }
+  if(dataB == undefined){
+    setDataB(datos5)
+  }
   return (
     <div className="columnas">
       <Widget
@@ -125,7 +132,7 @@ function App() {
         setHide={setHide}
         handleGetLocation={handleGetLocation}
       />
-      //<Extend data={data} datab={dataB} formatDate={formatDate} />
+      <Extend data={data} datab={dataB} formatDate={formatDate} />
     </div>
   );
 }
